@@ -7,6 +7,8 @@ CREATE DATABASE DreamHome;
 
 use dreamhome;
 
+## Creating Branch table
+
 CREATE TABLE Branch (
 branchNo varchar(10) PRIMARY KEY,
 street varchar(40),
