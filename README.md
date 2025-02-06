@@ -7,7 +7,7 @@ CREATE DATABASE DreamHome;
 ```
 use dreamhome;
 
-## Creating Branch table
+## 1. Creating Branch table
 
 ```sql
 CREATE TABLE Branch (
@@ -17,7 +17,7 @@ city varchar(30),
 postcode varchar(20)
 );
 ```
-## Creating Staff Table
+## 2. Creating Staff Table
 
 ```sql
 CREATE TABLE Staff (
@@ -31,7 +31,7 @@ salary numeric(8,2),
 branchNo varchar(10) FOREIGN KEY REFERENCES Branch
 );
 ```
-## Creating private Owner Table
+## 3. Creating private Owner Table
 ```sql
 CREATE TABLE PrivateOwner (
 ownerNo varchar(10) PRIMARY KEY,
@@ -41,7 +41,7 @@ lName nvarchar(25),
 telNo varchar(20)
 );
 ```
-## Creating Property For Rent Table 
+## 4. Creating Property For Rent Table 
 ```sql
 CREATE TABLE PropertyForRent (
 propertyNo varchar(10) PRIMARY KEY,
@@ -56,7 +56,7 @@ staffNo varchar(10) FOREIGN KEY REFERENCES Staff,
 branchNo varchar(10) FOREIGN KEY REFERENCES Branch
 );
 ```
-## Creating Client Table
+## 5. Creating Client Table
 ```sql
 CREATE TABLE Client (
 clientNo varchar(10) PRIMARY KEY,
@@ -68,7 +68,7 @@ maxRent numeric(6,2),
 eMail varchar(40)
 );
 ```
-## Creating Viewing Table
+## 6. Creating Viewing Table
 ```sql
 CREATE TABLE Viewing (
 clientNo varchar(10)
@@ -90,7 +90,7 @@ constraint viewing_pk PRIMARY KEY(clientNo,propertyNo)
 # to the existed table 
 
 
-## query to inserting data's to the branch tabele
+## 1. query to inserting data's to the branch tabele
 ```sql
 INSERT INTO Branch (branchNo, street, city, postcode)
 VALUES
@@ -105,7 +105,7 @@ VALUES
 ('B009', '333 Vine St', 'Hagerstown', 'MD 21740'),
 ('B010', '444 Water St', 'Laurel', 'MD 20707');
 ```
-## query to inserting data's to the staff table
+## 2. query to inserting data's to the staff table
 
 ```sql
 INSERT INTO Staff (staffNo, fName, lName, position, sex, DOB, salary, branchNo)
@@ -166,7 +166,7 @@ VALUES
 ('S054', 'Ethan', 'Lopez', 'Customer Service', 'M', '1997-04-25', 45000.00, 'B010'),
 ('S055', 'Olivia', 'Gonzalez', 'IT Specialist', 'F', '2002-08-30', 60000.00, 'B010');
 ```
-## query to inserting data's to the PrivateOwner table
+## 3. query to inserting data's to the PrivateOwner table
 
 ```sql
 INSERT INTO PrivateOwner (ownerNo, fName, lName, Address, telNo) VALUES
@@ -205,7 +205,7 @@ INSERT INTO PrivateOwner (ownerNo, fName, lName, Address, telNo) VALUES
 ('133', 'Gabriel', 'Watson', '789 Birch St', '555-4141');
 ```
 
-## query to inserting data's to the PropertyForRent table
+## 4. query to inserting data's to the PropertyForRent table
 ```sql
 INSERT INTO PropertyForRent (propertyNo, street, city, postcode, type, rooms, rent, ownerNo, staffNo, branchNo)
 VALUES
@@ -262,7 +262,7 @@ VALUES
 ('P051', '789 Elm Ln', 'Cumberland', 'MD 21503', 'Apartment', 1, 850, '126', 'S030', 'B010'),
 ('P052', '111 Birch Ln', 'College Park', 'MD 20741', 'House', 4, 230, '127', 'S021', 'B009');
 ```
-## query to inserting data's to the client table
+## 5. query to inserting data's to the client table
 
 ```sql
 INSERT INTO Client (clientNo, fName, lName, telNo, prefType, maxRent, eMail)
@@ -288,7 +288,7 @@ VALUES
 ('C019', 'Brandon', 'Cook', '0123456789', 'Apartment', 1200.00, 'brandoncook@email.com'),
 ('C020', 'Lauren', 'Bailey', '2345678901', 'House', 2300.00, 'laurenbailey@email.com');
 ```
-## query to inserting data's to the viewing table
+## 6. query to inserting data's to the viewing table
 
 ```sql
 INSERT INTO Viewing (clientNo, propertyNo, viewDate, comment)
