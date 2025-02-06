@@ -1,3 +1,5 @@
+```sql
+
 CREATE DATABASE DreamHome;
 
 use dreamhome;
@@ -61,6 +63,7 @@ comment varchar(100),
 constraint viewing_pk PRIMARY KEY(clientNo,propertyNo)
 );
 
+```
 
 
 
